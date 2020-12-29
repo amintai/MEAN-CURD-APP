@@ -1,0 +1,64 @@
+
+
+<div class="container">
+
+  <div class="square">
+    <div class="center">
+
+        <form #employeeForm="ngForm" (ngSubmit)="onSubmit(employeeForm)">
+        
+        <input type="hidden" name="_id" #_id="ngModel" [(ngModel)]="employeeService.selectedEmployee._id">
+
+        <div class="field">
+            <label class="label">FirstName</label>
+            <div class="control">
+              <input class="input" type="text" name="FirstName" #name="ngModel" [(ngModel)]="employeeService.selectedEmployee.FirstName" placeholder="FirstName" >
+            </div>
+        </div>
+        
+        <div class="field">
+            <label class="label">LastName</label>
+            <div class="control">
+              <input class="input" name="LastName" #name="ngModel" [(ngModel)]="employeeService.selectedEmployee.LastName" type="text" placeholder="LastName">
+            </div>
+        </div>
+        
+        <div class="field">
+            <label class="label">Email</label>
+            <div class="control">
+              <input class="input" name="Email" #name="ngModel" [(ngModel)]="employeeService.selectedEmployee.Email" type="text" placeholder="email address">
+            </div>
+        </div>
+        
+        <div class="field">
+            <label class="label">DOB</label>
+            <div class="control">
+              <input class="input" name="Dob" #name="ngModel" [(ngModel)]="employeeService.selectedEmployee.Dob" type="text" placeholder="Date Of Birth">
+            </div>
+        </div>
+        
+        <div class="field">
+            <label class="label">BIO</label>
+            <div class="control">
+              <textarea class="textarea" name="Bio" #name="ngModel" [(ngModel)]="employeeService.selectedEmployee.Bio" placeholder="Textarea"></textarea>
+            </div>
+          </div>
+   
+          <div class="field is-grouped">
+            <div class="control">
+              <button class="button is-link" (click)="showToasterSuccess()">Submit</button>
+            </div>
+            <div class="control">
+              <button class="button is-link is-light" (click)="resetForm(employeeForm)">Cancel</button>
+            </div>
+          </div>
+
+        </form>
+    </div>
+ </div>
+</div>
+    
+
+
+
+

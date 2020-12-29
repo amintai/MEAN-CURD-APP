@@ -1,0 +1,29 @@
+<div class="container ">
+
+<table class=" myTable table is-bordered is-striped is-narrow is-hoverable is-fullwidth">
+    <thead class="myHead">
+        <tr>
+            <th>FirstName</th>
+            <th>LaststName</th>
+            <th>Email</th>
+            <th>Dob</th>
+            <th>Bio</th>
+            <th style="border: none;"></th>
+            <th style="border: none;"></th>
+        </tr>
+    </thead>
+        <tr class="myTr" *ngFor="let emp of employeeService.employees">
+            <td>{{emp.FirstName}}</td>
+            <td>{{emp.LastName}}</td>
+            <td>{{emp.Email}}</td>
+            <td>{{emp.Dob}}</td>
+            <td>{{emp.Bio}}</td>
+            <td>
+                <button routerLink="create" (click)="onEdit(emp)">Update</button>
+            </td>
+            <td>
+                <button (click)="onDelete(emp._id)">Delete</button>
+            </td>
+        </tr>
+</table>
+</div>
